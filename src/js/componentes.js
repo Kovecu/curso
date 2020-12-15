@@ -1,7 +1,7 @@
 // Referencias en el html
 
-import { Todo, TodoList } from "../classes";
-
+import { Todo } from "../classes";
+import { todoList } from '../index.js';
 const divTodoList = document.querySelector('.todo-list');
 const txtInput    = document.querySelector('.new-todo');
 
@@ -29,13 +29,13 @@ export const crearTodoHtml = ( todo ) => {
 txtInput.addEventListener('keyup', ( event ) => {
     // console.log(event);
     // console.log(event.keyCode);
-     console.log(txtInput.value);
-    
-    if(event.keyCode === 13 && txtInput.value.lenght > 0){
+     //console.log(txtInput.value);
+
+    if(event.keyCode === 13 && txtInput.value.length > 0){
         console.log(txtInput.value);
-        const nuevoTodo = new Todo( txtInput.value );
-        TodoList.nuevoTodo( nuevoTodo );
-        crearTodoHtml( nuevoTodo );
-        console.log(TodoList);
+        const newTd = new Todo( txtInput.value );
+        todoList.nuevoTodo( newTd );
+        crearTodoHtml( newTd );
+        console.log(todoList);
     }
 });
