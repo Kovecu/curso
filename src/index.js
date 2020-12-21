@@ -5,8 +5,12 @@ import './styles.css';
 
 
 export const todoList = new TodoList();
-const tarea =  new Todo('Aprender JS!!');
 
-console.log(todoList)
+todoList.todos.forEach(todo => crearTodoHtml( todo ));
+// const tarea =  new Todo('Aprender JS!!');
 
-crearTodoHtml( tarea );
+// console.log(todoList)
+
+// crearTodoHtml( tarea );
+// // localStorage.setItem('mi-key', 'ABC123');
+// // sessionStorage.setItem()
